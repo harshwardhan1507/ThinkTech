@@ -19,6 +19,7 @@ export type Event = {
   date: string;
   format: string;
   audience: string;
+  image?: string;
 };
 
 export type TeamMember = {
