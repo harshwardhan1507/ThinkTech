@@ -1,6 +1,20 @@
+import { BriefcaseBusiness, MessageCircle } from "lucide-react";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { GlassCard } from "@/components/ui/glass-card";
 import { SectionShell } from "@/components/ui/section-shell";
+
+const socialLinks = [
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/search/results/all/?keywords=ThinkTech%20STEM%20Orator%27s%20Society",
+    icon: BriefcaseBusiness,
+  },
+  {
+    label: "WhatsApp",
+    href: "https://wa.me/",
+    icon: MessageCircle,
+  },
+];
 
 export function FinalCtaSection() {
   return (
@@ -16,6 +30,24 @@ export function FinalCtaSection() {
           </p>
           <div className="mt-9 flex justify-center">
             <MagneticButton href="mailto:thinktech@example.edu">Start the Conversation</MagneticButton>
+          </div>
+          <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            {socialLinks.map((link) => {
+              const Icon = link.icon;
+
+              return (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="focus-ring inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-white/12 bg-white/[0.06] px-5 text-sm font-semibold text-slate-100 shadow-[0_8px_32px_rgba(0,0,0,0.18)] backdrop-blur-2xl transition hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.1] sm:w-auto"
+                >
+                  <Icon size={17} aria-hidden="true" />
+                  Join on {link.label}
+                </a>
+              );
+            })}
           </div>
         </div>
       </GlassCard>
