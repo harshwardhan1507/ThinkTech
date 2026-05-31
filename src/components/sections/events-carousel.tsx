@@ -52,9 +52,6 @@ export function EventsCarousel() {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-20 hidden w-20 bg-gradient-to-r from-background to-transparent lg:block" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-20 hidden w-24 bg-gradient-to-l from-background to-transparent lg:block" />
-
       <div
         ref={trackRef}
         className="scrollbar-none -mx-5 flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth px-5 pb-3 sm:-mx-8 sm:gap-6 sm:px-8"
