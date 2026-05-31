@@ -16,7 +16,7 @@ export function GallerySection() {
       id="gallery"
       eyebrow="Gallery"
       title="A visual archive ready for real moments."
-      description="The system is prepared for production photography while using generated visual placeholders for launch."
+      description=" "
     >
       <div className="grid gap-5 md:grid-cols-2">
         {gallery.map((item, index) => (

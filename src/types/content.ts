@@ -27,7 +27,7 @@ export type TeamMember = {
   role: string;
   profile: string;
   focus: string;
-  initials: string;
+  initials?: string;
   image?: string;
   gradient: string;
 };
