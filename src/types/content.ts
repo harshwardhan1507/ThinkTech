@@ -28,6 +28,8 @@ export type TeamMember = {
   profile: string;
   focus: string;
   initials: string;
+  image?: string;
+  gradient: string;
 };
 
 export type GalleryItem = {
