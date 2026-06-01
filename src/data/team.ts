@@ -8,6 +8,7 @@ export const team: TeamMember[] = [
     focus: "Academic leadership",
     gradient: "from-blue-300/28 via-white/10 to-amber-300/18",
     image: "/images/team/ranjit-roy.jpg",
+    linkedin: "https://www.linkedin.com/in/dr-ranjit-roy-408877270/",
   },
   {
     name: "Mrs. Tulika Kakkar",
@@ -15,15 +16,17 @@ export const team: TeamMember[] = [
     profile: "Designs practice formats that help technical students sound precise, calm, and memorable.",
     focus: "Faculty coordination",
     gradient: "from-cyan-300/24 via-blue-400/18 to-white/12",
-    image: "/images/team/tulika-kakkar.jpg",
+    image: "/profile/tulika-kakkar.jpg",
+    linkedin: "https://www.linkedin.com/in/tulika-kakkar-935b7a318/",
   },
   {
     name: "Harsh Wardhan",
-    role: "Club Member",
-    profile: "Builds topic briefs and formats that reward evidence, nuance, and intellectual honesty.",
-    focus: "Club activities",
+    role: "Technical Lead",
+    profile: "Manages the club's online presence and website. Drives technical initiatives, contributes strategic ideas for organizational growth, and supports the club's operational framework.",
+    focus: "Technology & Infrastructure",
     gradient: "from-amber-300/22 via-blue-300/16 to-slate-100/10",
-    image: "/images/team/harsh-wardhan.jpg",
+    image: "/profile/harsh-wardhan.png",
+    linkedin: "https://www.linkedin.com/in/harsh-wardhan-singh-cse/",
   },
   {
     name: "Jonathan Stephan Walsh",
@@ -31,7 +34,8 @@ export const team: TeamMember[] = [
     profile: "Shapes event identity, documentation, and the visual language of ThinkTech moments.",
     focus: "Club activities",
     gradient: "from-white/18 via-blue-400/24 to-cyan-300/12",
-    image: "/images/team/jonathan-walsh.jpg",
+    image: "/profile/jonathan-walsh.jpeg",
+    linkedin: "https://www.linkedin.com/in/jonathan-stephen-walsh/",
   },
   {
     name: "Rudra Vivek",
@@ -39,7 +43,8 @@ export const team: TeamMember[] = [
     profile: "Shapes event identity, documentation, and the visual language of ThinkTech moments.",
     focus: "Club activities",
     gradient: "from-white/18 via-blue-400/24 to-cyan-300/12",
-    image: "/images/team/rudra-vivek.jpg",
+    image: "/profile/rudrav.jpeg",
+    linkedin: "https://linkedin.com/in/rudra-vivek",
   },
   {
     name: "Mishika",
@@ -48,5 +53,6 @@ export const team: TeamMember[] = [
     focus: "Club activities",
     gradient: "from-white/18 via-blue-400/24 to-cyan-300/12",
     image: "/images/team/mishika.jpg",
+    linkedin: "https://linkedin.com/in/mishika",
   },
 ];

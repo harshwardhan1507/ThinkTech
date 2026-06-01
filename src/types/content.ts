@@ -30,6 +30,7 @@ export type TeamMember = {
   initials?: string;
   image?: string;
   gradient: string;
+  linkedin?: string;
 };
 
 export type GalleryItem = {

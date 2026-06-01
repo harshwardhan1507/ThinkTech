@@ -11,7 +11,7 @@ const socialLinks = [
   },
   {
     label: "WhatsApp",
-    href: "https://wa.me/",
+    href: "https://chat.whatsapp.com/Lu3qEWeDTiM8twPE0KtZmG",
     icon: MessageCircle,
   },
 ];

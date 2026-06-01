@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import type { MouseEvent } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Menu, Sparkles, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -36,9 +36,37 @@ export function FloatingNav() {
     return () => window.removeEventListener("keydown", closeOnEscape);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
+
   const handleMobileNavClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    const href = event.currentTarget.getAttribute("href");
     event.currentTarget.blur();
+
+    // Restore body scroll immediately so scrolling isn't blocked
+    document.body.style.overflow = "";
     setMobileMenuOpen(false);
+
+    // Programmatically scroll to the target section
+    if (href) {
+      const target = document.querySelector(href);
+      if (target) {
+        // Small delay to let the menu close animation start and overflow restore
+        requestAnimationFrame(() => {
+          target.scrollIntoView({ behavior: "smooth" });
+        });
+      }
+    }
   };
 
   return (
@@ -89,34 +117,56 @@ export function FloatingNav() {
           {mobileMenuOpen ? <X size={18} aria-hidden="true" /> : <Menu size={18} aria-hidden="true" />}
         </button>
       </nav>
-      <motion.div
-        id="mobile-navigation"
-        className="mx-auto mt-3 max-w-5xl overflow-hidden rounded-[28px] border border-white/12 bg-white/[0.07] shadow-[0_18px_50px_rgba(0,0,0,0.34)] backdrop-blur-2xl md:hidden"
-        initial={false}
-        animate={mobileMenuOpen ? { height: "auto", opacity: 1, y: 0 } : { height: 0, opacity: 0, y: -8 }}
-        transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
-        aria-hidden={!mobileMenuOpen}
-      >
-        <div className="grid gap-1 p-3">
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="focus-ring rounded-2xl px-4 py-3 text-sm font-semibold text-slate-200 transition hover:bg-white/[0.08] hover:text-white"
-              onClick={handleMobileNavClick}
-            >
-              {item.label}
-            </a>
-          ))}
-          <a
-            href="#join"
-            className="focus-ring mt-1 rounded-2xl bg-white px-4 py-3 text-center text-sm font-semibold text-slate-950 transition hover:bg-blue-50"
-            onClick={handleMobileNavClick}
+
+      {/* Mobile menu overlay — closes menu when tapping outside */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            className="fixed inset-0 -z-10 md:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onClick={() => setMobileMenuOpen(false)}
+            aria-hidden="true"
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Mobile menu dropdown */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            id="mobile-navigation"
+            className="mx-auto mt-3 max-w-5xl overflow-hidden rounded-[28px] border border-white/12 bg-white/[0.07] shadow-[0_18px_50px_rgba(0,0,0,0.34)] backdrop-blur-2xl md:hidden"
+            initial={{ height: 0, opacity: 0, y: -8 }}
+            animate={{ height: "auto", opacity: 1, y: 0 }}
+            exit={{ height: 0, opacity: 0, y: -8 }}
+            transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
           >
-            Join ThinkTech
-          </a>
-        </div>
-      </motion.div>
+            <div className="grid gap-1 p-3">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="focus-ring rounded-2xl px-4 py-3 text-sm font-semibold text-slate-200 transition hover:bg-white/[0.08] hover:text-white active:bg-white/[0.12]"
+                  onClick={handleMobileNavClick}
+                >
+                  {item.label}
+                </a>
+              ))}
+              <a
+                href="#join"
+                className="focus-ring mt-1 rounded-2xl bg-white px-4 py-3 text-center text-sm font-semibold text-slate-950 transition hover:bg-blue-50 active:bg-blue-100"
+                onClick={handleMobileNavClick}
+              >
+                Join ThinkTech
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 }
+
