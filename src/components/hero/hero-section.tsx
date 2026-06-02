@@ -67,7 +67,7 @@ export function HeroSection() {
       id="home"
       className="relative flex min-h-screen items-center overflow-hidden px-5 pb-20 pt-32 sm:px-8 lg:pt-28"
     >
-      <div className="absolute -right-28 top-28 h-96 w-96 opacity-70 sm:-right-10 sm:h-[34rem] sm:w-[34rem] lg:hidden">
+      <div className="absolute -right-20 top-20 h-64 w-64 opacity-70 sm:-right-10 sm:top-28 sm:h-80 sm:w-80 lg:-right-20 lg:h-[34rem] lg:w-[34rem] lg:hidden">
         <NetworkField />
       </div>
       <div className="mx-auto grid w-full max-w-7xl items-center gap-14 lg:grid-cols-[0.92fr_1.08fr]">

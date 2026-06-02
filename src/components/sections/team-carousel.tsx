@@ -36,7 +36,7 @@ function TeamCard({ member, index }: { member: (typeof team)[number]; index: num
     <motion.article
       ref={cardRef}
       data-team-card
-      className="min-w-[84vw] snap-center sm:min-w-[26rem] lg:min-w-[30rem] xl:min-w-[32rem]"
+      className="min-w-[calc(100%-2rem)] snap-center sm:min-w-[26rem] lg:min-w-[30rem] xl:min-w-[32rem]"
       style={{ perspective: "1200px" }}
       initial={{ opacity: 0, x: 36 }}
       whileInView={{ opacity: 1, x: 0 }}

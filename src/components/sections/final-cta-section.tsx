@@ -110,7 +110,7 @@ export function FinalCtaSection() {
                   href={link.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="focus-ring inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-white/12 bg-white/[0.06] px-5 text-sm font-semibold text-slate-100 shadow-[0_8px_32px_rgba(0,0,0,0.18)] backdrop-blur-2xl transition-all hover:border-white/20 hover:bg-white/[0.1] hover:shadow-[0_0_20px_rgba(96,165,250,0.12)] sm:w-auto"
+                  className="focus-ring inline-flex min-h-12 w-full flex-col items-center justify-center gap-2 rounded-full border border-white/12 bg-white/[0.06] px-5 text-sm font-semibold text-slate-100 shadow-[0_8px_32px_rgba(0,0,0,0.18)] backdrop-blur-2xl transition-all hover:border-white/20 hover:bg-white/[0.1] hover:shadow-[0_0_20px_rgba(96,165,250,0.12)] sm:w-auto sm:flex-row"
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.97 }}
                 >

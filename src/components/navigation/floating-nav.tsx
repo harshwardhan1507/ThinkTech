@@ -158,7 +158,7 @@ export function FloatingNav() {
         {mobileMenuOpen && (
           <motion.div
             id="mobile-navigation"
-            className="mx-auto mt-3 max-w-5xl overflow-hidden rounded-[28px] border border-white/12 bg-white/[0.07] shadow-[0_18px_50px_rgba(0,0,0,0.34)] backdrop-blur-2xl md:hidden"
+            className="mx-auto mt-4 max-w-xl overflow-hidden rounded-[28px] border border-white/12 bg-white/[0.07] shadow-[0_18px_50px_rgba(0,0,0,0.34)] backdrop-blur-2xl md:hidden"
             initial={{ height: 0, opacity: 0, y: -8 }}
             animate={{ height: "auto", opacity: 1, y: 0 }}
             exit={{ height: 0, opacity: 0, y: -8 }}

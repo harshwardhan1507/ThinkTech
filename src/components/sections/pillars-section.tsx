@@ -11,7 +11,7 @@ export function PillarsSection() {
       title="Five disciplines. One operating system for influence."
       description="Every ThinkTech format is designed to strengthen a specific part of the journey from thought to public impact."
     >
-      <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
         {pillars.map((pillar, index) => {
           const Icon = pillar.icon;
 

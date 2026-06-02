@@ -28,7 +28,7 @@ export function GallerySection() {
               <motion.div
                 className={cn(
                   "group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04]",
-                  isLarge ? "md:aspect-[16/10]" : "aspect-[16/10]",
+                  isLarge ? "aspect-[16/10] md:aspect-[16/10]" : "aspect-[16/10]",
                 )}
                 whileHover={{
                   borderColor: "rgba(255,255,255,0.2)",

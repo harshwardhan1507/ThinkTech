@@ -24,7 +24,7 @@ export function SectionDivider({ variant = "glow", className }: SectionDividerPr
   return (
     <div
       ref={ref}
-      className={cn("pointer-events-none relative h-32 sm:h-40 lg:h-48 overflow-hidden", className)}
+      className={cn("pointer-events-none relative h-20 sm:h-32 lg:h-40 overflow-hidden", className)}
       aria-hidden="true"
     >
       {variant === "glow" && (

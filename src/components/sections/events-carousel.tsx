@@ -36,7 +36,7 @@ function EventCard({ event, index }: { event: (typeof events)[number]; index: nu
     <motion.article
       ref={cardRef}
       data-event-card
-      className="min-w-[82vw] snap-center sm:min-w-[25rem] lg:min-w-[29rem] xl:min-w-[31rem]"
+      className="min-w-[calc(100%-2rem)] snap-center sm:min-w-[25rem] lg:min-w-[29rem] xl:min-w-[31rem]"
       style={{
         perspective: "1200px",
       }}
