@@ -25,7 +25,7 @@ export function MagneticButton({
   return (
     <motion.a
       className={cn(
-        "focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 text-sm font-semibold tracking-normal transition-colors",
+        "focus-ring group/btn relative inline-flex min-h-12 items-center justify-center gap-2 overflow-hidden rounded-full px-6 text-sm font-semibold tracking-normal transition-colors",
         variant === "primary"
           ? "bg-white text-slate-950 shadow-[0_12px_40px_rgba(248,250,252,0.18)] hover:bg-blue-50"
           : "border border-white/14 bg-white/[0.055] text-white backdrop-blur-2xl hover:bg-white/[0.09]",
@@ -41,10 +41,18 @@ export function MagneticButton({
         x.set(0);
         y.set(0);
       }}
+      whileTap={{ scale: 0.97 }}
       {...props}
     >
-      {children}
-      <motion.span aria-hidden="true" style={{ x: iconX }}>
+      {/* Glow effect on hover */}
+      {variant === "primary" && (
+        <span className="pointer-events-none absolute inset-0 rounded-full opacity-0 shadow-[0_0_24px_rgba(59,130,246,0.3)] transition-opacity duration-300 group-hover/btn:opacity-100" />
+      )}
+      {variant === "secondary" && (
+        <span className="pointer-events-none absolute inset-0 rounded-full opacity-0 shadow-[inset_0_0_20px_rgba(96,165,250,0.1)] transition-opacity duration-300 group-hover/btn:opacity-100" />
+      )}
+      <span className="relative z-10">{children}</span>
+      <motion.span aria-hidden="true" className="relative z-10" style={{ x: iconX }}>
         <ArrowRight size={16} strokeWidth={2.2} />
       </motion.span>
     </motion.a>

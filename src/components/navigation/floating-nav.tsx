@@ -1,22 +1,25 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { MouseEvent } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, Sparkles, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useActiveSection } from "@/hooks/use-active-section";
 
 const navItems = [
-  { label: "About", href: "#about" },
-  { label: "Pillars", href: "#pillars" },
-  { label: "Impact", href: "#impact" },
-  { label: "Events", href: "#events" },
-  { label: "Team", href: "#team" },
+  { label: "About", href: "#about", section: "about" },
+  { label: "Pillars", href: "#pillars", section: "pillars" },
+  { label: "Impact", href: "#impact", section: "impact" },
+  { label: "Events", href: "#events", section: "events" },
+  { label: "Team", href: "#team", section: "team" },
 ];
 
 export function FloatingNav() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const activeSection = useActiveSection();
+  const navRefs = useRef<Map<string, HTMLAnchorElement>>(new Map());
 
   useEffect(() => {
     const update = () => setScrolled(window.scrollY > 24);
@@ -69,6 +72,7 @@ export function FloatingNav() {
     }
   };
 
+
   return (
     <motion.header
       className="fixed inset-x-0 top-4 z-50 px-4 sm:top-6"
@@ -89,14 +93,30 @@ export function FloatingNav() {
           </span>
           <span className="text-sm font-semibold tracking-tight text-white">ThinkTech</span>
         </a>
-        <div className="hidden items-center gap-1 md:flex">
+        <div className="hidden items-center gap-1 md:flex relative">
           {navItems.map((item) => (
             <a
               key={item.href}
+              ref={(el) => {
+                if (el) navRefs.current.set(item.section, el);
+              }}
               href={item.href}
-              className="focus-ring rounded-full px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/[0.07] hover:text-white"
+              className={cn(
+                "focus-ring relative rounded-full px-4 py-2 text-sm font-medium transition-colors duration-300",
+                activeSection === item.section
+                  ? "text-white"
+                  : "text-slate-300 hover:bg-white/[0.07] hover:text-white",
+              )}
             >
               {item.label}
+              {activeSection === item.section && (
+                <motion.span
+                  layoutId="nav-underline"
+                  className="absolute inset-0 rounded-full bg-white/[0.1]"
+                  transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                  style={{ zIndex: -1 }}
+                />
+              )}
             </a>
           ))}
         </div>
@@ -149,7 +169,10 @@ export function FloatingNav() {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="focus-ring rounded-2xl px-4 py-3 text-sm font-semibold text-slate-200 transition hover:bg-white/[0.08] hover:text-white active:bg-white/[0.12]"
+                  className={cn(
+                    "focus-ring rounded-2xl px-4 py-3 text-sm font-semibold transition hover:bg-white/[0.08] hover:text-white active:bg-white/[0.12]",
+                    activeSection === item.section ? "bg-white/[0.06] text-white" : "text-slate-200",
+                  )}
                   onClick={handleMobileNavClick}
                 >
                   {item.label}
@@ -169,4 +192,3 @@ export function FloatingNav() {
     </motion.header>
   );
 }
-

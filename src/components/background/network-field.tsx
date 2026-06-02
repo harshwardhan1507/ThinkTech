@@ -49,12 +49,12 @@ export function NetworkField() {
           <stop offset="100%" stopColor="#3B82F6" stopOpacity="0" />
         </radialGradient>
       </defs>
-      {lines.map(([from, to], index) => {
+      {lines.map(([from, to]) => {
         const [x1, y1] = points[from];
         const [x2, y2] = points[to];
 
         return (
-          <motion.line
+          <line
             key={`${from}-${to}`}
             x1={x1}
             x2={x2}
@@ -62,37 +62,30 @@ export function NetworkField() {
             y2={y2}
             stroke="url(#network-line)"
             strokeWidth="0.18"
-            pathLength="1"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ pathLength: 1, opacity: [0.35, 0.75, 0.35] }}
-            transition={{
-              pathLength: { duration: 1.2, delay: index * 0.08, ease: "easeInOut" },
-              opacity: { duration: 5, repeat: Infinity, delay: index * 0.2, ease: "easeInOut" },
-            }}
+            opacity="0.55"
           />
         );
       })}
       {points.map(([cx, cy], index) => (
-        <motion.g key={`${cx}-${cy}`}>
-          <motion.circle
+        <g key={`${cx}-${cy}`}>
+          <circle
             cx={cx}
             cy={cy}
             r="3.8"
             fill="url(#node-glow)"
-            opacity="0.34"
-            animate={{ scale: [0.86, 1.2, 0.86], opacity: [0.2, 0.48, 0.2] }}
-            transition={{ duration: 4.8, repeat: Infinity, delay: index * 0.22, ease: "easeInOut" }}
+            opacity="0.3"
+            className="network-node-glow"
+            style={{ animationDelay: `${index * 0.4}s` }}
           />
           <circle cx={cx} cy={cy} r="0.74" fill="#F8FAFC" opacity="0.86" />
-        </motion.g>
+        </g>
       ))}
-      <motion.path
+      <path
         d="M50 42 C47 46 46 52 48 57 C50 62 54 62 56 57 C58 52 57 46 54 42 C53 40 51 40 50 42Z"
         fill="rgba(248,250,252,0.045)"
         stroke="rgba(248,250,252,0.18)"
         strokeWidth="0.25"
-        animate={{ opacity: [0.22, 0.42, 0.22] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        opacity="0.32"
       />
     </motion.svg>
   );

@@ -31,8 +31,30 @@ export const tokens = {
       fast: 0.22,
       base: 0.44,
       slow: 0.72,
+      dramatic: 1.0,
     },
-    easing: [0.22, 1, 0.36, 1],
+    easing: [0.22, 1, 0.36, 1] as const,
+    easings: {
+      smooth: [0.22, 1, 0.36, 1] as const,
+      snappy: [0.16, 1, 0.3, 1] as const,
+      dramatic: [0.65, 0, 0.35, 1] as const,
+      spring: [0.34, 1.56, 0.64, 1] as const,
+    },
+    stagger: {
+      fast: 0.04,
+      base: 0.08,
+      slow: 0.12,
+    },
+    spring: {
+      gentle: { stiffness: 120, damping: 20, mass: 1 },
+      snappy: { stiffness: 300, damping: 30, mass: 0.8 },
+      bouncy: { stiffness: 400, damping: 25, mass: 0.6 },
+    },
+    parallax: {
+      slow: 0.15,
+      medium: 0.3,
+      fast: 0.5,
+    },
   },
   z: {
     background: 0,

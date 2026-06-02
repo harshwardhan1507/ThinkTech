@@ -124,6 +124,96 @@ body {
   transform: translate3d(0, -4px, 0);
 }
 
+/* Gradient text utility for premium headings */
+.gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #60a5fa 50%, #c89b3c 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-blue {
+  background: linear-gradient(135deg, #ffffff 20%, #60a5fa 80%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glow pulse animation for accents */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(96, 165, 250, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(96, 165, 250, 0.3);
+  }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Ambient background floating orbs — CSS-driven for zero JS overhead */
+@keyframes float1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(40px, 28px) scale(1.08);
+  }
+}
+
+@keyframes float2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-32px, -24px) scale(1.06);
+  }
+}
+
+/* Subtle shimmer for loading states */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2.5s ease-in-out infinite;
+}
+
+/* Network field node glow — CSS-driven instead of 9 Framer Motion instances */
+@keyframes node-glow {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.86);
+  }
+  50% {
+    opacity: 0.42;
+    transform: scale(1.15);
+  }
+}
+
+.network-node-glow {
+  animation: node-glow 5s ease-in-out infinite;
+}
+
+/* Hero visual breathing pulse — CSS instead of Framer Motion */
+@keyframes hero-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 0.9;
+  }
+}
+
 .focus-ring {
   outline: none;
 }

@@ -6,6 +6,20 @@ export type Stat = {
   detail: string;
 };
 
+export type ImpactMetric = {
+  numericValue: number;
+  suffix: string;
+  label: string;
+  detail: string;
+  accentColor?: string;
+};
+
+export type TimelineMilestone = {
+  date: string;
+  title: string;
+  description: string;
+};
+
 export type Pillar = {
   title: string;
   description: string;
@@ -20,6 +34,8 @@ export type Event = {
   format: string;
   audience: string;
   image?: string;
+  category?: string;
+  impact?: string;
 };
 
 export type TeamMember = {
@@ -37,6 +53,7 @@ export type GalleryItem = {
   title: string;
   description: string;
   image: string;
+  imageSrc?: string;
   event: string;
   date: string;
 };

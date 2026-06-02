@@ -7,17 +7,25 @@ import { GallerySection } from "@/components/sections/gallery-section";
 import { ImpactSection } from "@/components/sections/impact-section";
 import { PillarsSection } from "@/components/sections/pillars-section";
 import { TeamSection } from "@/components/sections/team-section";
+import { SectionDivider } from "@/components/effects/section-divider";
 
 export default function Home() {
   return (
     <SiteShell>
       <HeroSection />
+      <SectionDivider variant="glow" />
       <AboutSection />
+      <SectionDivider variant="beam" />
       <PillarsSection />
+      <SectionDivider variant="fade" />
       <ImpactSection />
+      <SectionDivider variant="glow" />
       <EventsSection />
+      <SectionDivider variant="beam" />
       <TeamSection />
+      <SectionDivider variant="fade" />
       <GallerySection />
+      <SectionDivider variant="glow" />
       <FinalCtaSection />
     </SiteShell>
   );
