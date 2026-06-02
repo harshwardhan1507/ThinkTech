@@ -2,7 +2,7 @@ import type { TeamMember } from "@/types/content";
 
 export const team: TeamMember[] = [
   {
-    name: "DR. Ranjit Roy",
+    name: "Prof Ranjit Roy",
     role: "Dean of faculty of engineering and technology",
     profile: "Leads programming and partnerships with a focus on turning student initiative into durable systems.",
     focus: "Academic leadership",
@@ -11,7 +11,7 @@ export const team: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/dr-ranjit-roy-408877270/",
   },
   {
-    name: "Mrs. Tulika Kakkar",
+    name: "Dr. Tulika Kakkar",
     role: "Faculty Coordinator",
     profile: "Designs practice formats that help technical students sound precise, calm, and memorable.",
     focus: "Faculty coordination",
@@ -38,15 +38,6 @@ export const team: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/jonathan-stephen-walsh/",
   },
   {
-    name: "Rudra Vivek",
-    role: "Club Member",
-    profile: "Shapes event identity, documentation, and the visual language of ThinkTech moments.",
-    focus: "Club activities",
-    gradient: "from-white/18 via-blue-400/24 to-cyan-300/12",
-    image: "/profile/rudrav.jpeg",
-    linkedin: "https://linkedin.com/in/rudra-vivek",
-  },
-  {
     name: "Mishika",
     role: "Club Member",
     profile: "Shapes event identity, documentation, and the visual language of ThinkTech moments.",
@@ -55,4 +46,14 @@ export const team: TeamMember[] = [
     image: "/profile/mishika.png",
     linkedin: "https://linkedin.com/in/mishika",
   },
+  {
+    name: "Rudra Vivek",
+    role: "Club Member",
+    profile: "Shapes event identity, documentation, and the visual language of ThinkTech moments.",
+    focus: "Club activities",
+    gradient: "from-white/18 via-blue-400/24 to-cyan-300/12",
+    image: "/profile/rudrav.jpeg",
+    linkedin: "https://linkedin.com/in/rudra-vivek",
+  },
+  
 ];

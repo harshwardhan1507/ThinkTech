@@ -45,7 +45,7 @@ function TeamCard({ member, index }: { member: (typeof team)[number]; index: num
     >
       <motion.div
         className="group relative flex h-full flex-col overflow-hidden rounded-[20px] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.075),rgba(255,255,255,0.032)),rgba(255,255,255,0.06)] shadow-[0_8px_32px_rgba(0,0,0,0.25)] backdrop-blur-2xl"
-        style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+        style={{ rotateX, rotateY, transformStyle: "preserve-3d", borderColor: "rgba(255, 255, 255, 0.1)" }}
         onPointerMove={handlePointerMove}
         onPointerLeave={handlePointerLeave}
         whileHover={{
@@ -89,11 +89,6 @@ function TeamCard({ member, index }: { member: (typeof team)[number]; index: num
             {/* Focus badge */}
             <div className="absolute bottom-3 left-3 rounded-full border border-white/12 bg-slate-950/40 px-3 py-1 text-xs font-semibold text-blue-100 backdrop-blur-xl">
               {member.focus}
-            </div>
-
-            {/* Role badge */}
-            <div className="absolute right-3 top-3 rounded-full border border-white/12 bg-slate-950/40 px-3 py-1 text-xs font-medium text-white/80 backdrop-blur-xl">
-              {member.role}
             </div>
           </div>
 

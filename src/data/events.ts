@@ -10,7 +10,7 @@ export const events: Event[] = [
     audience: "Engineering Students",
     image: "/events/extempore-deepfakes.jpg",
     category: "Competition",
-    impact: "60+ participants",
+    impact: "10+ participants",
   },
   {
     title: "Panel Discussion: AI — A Servant or a Partner?",
@@ -21,7 +21,7 @@ export const events: Event[] = [
     audience: "University Community",
     image: "/events/panel-ai-servant-partner.jpg",
     category: "Panel",
-    impact: "100+ attendees",
+    impact: "30+ attendees",
   },
   {
     title: "WordWeave: Random Tech Storytelling Challenge",
@@ -32,7 +32,7 @@ export const events: Event[] = [
     audience: "Open to Students",
     image: "/events/wordweave-storytelling.jpg",
     category: "Competition",
-    impact: "80+ participants",
+    impact: "15+ participants",
   },
   {
     title: "Engineers' Day Debate: AI in Warfare",
@@ -43,6 +43,6 @@ export const events: Event[] = [
     audience: "Engineering Students",
     image: "/events/engineers-day-ai-warfare.jpg",
     category: "Competition",
-    impact: "80+ participants",
+    impact: "20+ participants",
   },
 ];
