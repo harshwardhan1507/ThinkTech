@@ -27,6 +27,8 @@ export const team: TeamMember[] = [
     gradient: "from-amber-300/22 via-blue-300/16 to-slate-100/10",
     image: "/profile/harsh-wardhan.png",
     linkedin: "https://www.linkedin.com/in/harsh-wardhan-singh-cse/",
+    github: "https://github.com/harshwardhan1507",
+    portfolio: "https://harshwardhanportfolio.vercel.app/",
   },
   {
     name: "Jonathan Stephan Walsh",

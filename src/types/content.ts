@@ -47,6 +47,8 @@ export type TeamMember = {
   image?: string;
   gradient: string;
   linkedin?: string;
+  github?: string;
+  portfolio?: string;
 };
 
 export type GalleryItem = {
