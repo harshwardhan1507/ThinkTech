@@ -128,7 +128,7 @@ export function DeveloperCredit() {
                   Full-Stack Developer
                 </p>
                 <p className="text-[11px] font-mono text-neutral-400">
-                  Member • TechSpace
+                  Technical Coordinator • ThinkTech Society
                 </p>
               </div>
             </motion.div>
@@ -146,7 +146,7 @@ export function DeveloperCredit() {
 
             {/* Description */}
             <motion.p variants={itemVariants} className="text-xs text-neutral-300 leading-relaxed max-w-sm">
-              Thanks for checking out TechSpace! I designed and developed this website with a focus on performance, accessibility, and smooth user experiences.
+              Thanks for checking out ThinkTech Society! I designed and developed this website with a focus on performance, accessibility, and smooth user experiences.
             </motion.p>
 
             {/* Tech Stack Chips */}
