@@ -1,23 +1,11 @@
 "use client";
 
 import { useRef } from "react";
-import { BriefcaseBusiness, MessageCircle } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { SectionShell } from "@/components/ui/section-shell";
 
-const socialLinks = [
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/search/results/all/?keywords=ThinkTech%20STEM%20Orator%27s%20Society",
-    icon: BriefcaseBusiness,
-  },
-  {
-    label: "WhatsApp",
-    href: "https://chat.whatsapp.com/Lu3qEWeDTiM8twPE0KtZmG",
-    icon: MessageCircle,
-  },
-];
+const WHATSAPP_INVITE_LINK = "https://chat.whatsapp.com/Lu3qEWeDTiM8twPE0KtZmG";
 
 export function FinalCtaSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -91,34 +79,13 @@ export function FinalCtaSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           >
-            <MagneticButton href="mailto:thinktech@example.edu">Start the Conversation</MagneticButton>
-          </motion.div>
-
-          <motion.div
-            className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row"
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          >
-            {socialLinks.map((link) => {
-              const Icon = link.icon;
-
-              return (
-                <motion.a
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="focus-ring inline-flex min-h-12 w-full flex-col items-center justify-center gap-2 rounded-full border border-white/12 bg-white/[0.06] px-5 text-sm font-semibold text-slate-100 shadow-[0_8px_32px_rgba(0,0,0,0.18)] backdrop-blur-2xl transition-all hover:border-white/20 hover:bg-white/[0.1] hover:shadow-[0_0_20px_rgba(96,165,250,0.12)] sm:w-auto sm:flex-row"
-                  whileHover={{ y: -2 }}
-                  whileTap={{ scale: 0.97 }}
-                >
-                  <Icon size={17} aria-hidden="true" />
-                  Join on {link.label}
-                </motion.a>
-              );
-            })}
+            <MagneticButton
+              href={WHATSAPP_INVITE_LINK}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Start the Conversation
+            </MagneticButton>
           </motion.div>
         </div>
       </motion.div>

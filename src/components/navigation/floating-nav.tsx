@@ -121,7 +121,9 @@ export function FloatingNav() {
           ))}
         </div>
         <a
-          href="#join"
+          href="https://chat.whatsapp.com/Lu3qEWeDTiM8twPE0KtZmG"
+          target="_blank"
+          rel="noreferrer"
           className="focus-ring hidden rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-blue-50 sm:inline-flex"
         >
           Join ThinkTech
@@ -179,9 +181,11 @@ export function FloatingNav() {
                 </a>
               ))}
               <a
-                href="#join"
+                href="https://chat.whatsapp.com/Lu3qEWeDTiM8twPE0KtZmG"
+                target="_blank"
+                rel="noreferrer"
                 className="focus-ring mt-1 rounded-2xl bg-white px-4 py-3 text-center text-sm font-semibold text-slate-950 transition hover:bg-blue-50 active:bg-blue-100"
-                onClick={handleMobileNavClick}
+                onClick={() => setMobileMenuOpen(false)}
               >
                 Join ThinkTech
               </a>

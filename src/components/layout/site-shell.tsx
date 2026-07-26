@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { AmbientBackground } from "@/components/background/ambient-background";
 import { MotionProvider } from "@/components/effects/motion-provider";
 import { FloatingNav } from "@/components/navigation/floating-nav";
+import { Footer } from "@/components/layout/footer";
 
 export function SiteShell({ children }: { children: ReactNode }) {
   return (
@@ -9,6 +10,8 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <AmbientBackground />
       <FloatingNav />
       <main className="relative z-10">{children}</main>
+      <Footer />
     </MotionProvider>
   );
 }
+
