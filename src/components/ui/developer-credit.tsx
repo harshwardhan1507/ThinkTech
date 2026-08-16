@@ -95,6 +95,7 @@ export function DeveloperCredit() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            key="developer-profile-popover"
             variants={containerVariants}
             initial="hidden"
             animate="visible"

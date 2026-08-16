@@ -65,7 +65,6 @@ function MetricCard({
 
 function Timeline() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(containerRef, { once: true, amount: 0.2 });
 
   return (
     <div ref={containerRef} className="mt-20 lg:mt-28">
