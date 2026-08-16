@@ -21,7 +21,7 @@ export const team: TeamMember[] = [
   },
   {
     name: "Harsh Wardhan",
-    role: "Technical Coordinator",
+    role: "Technical & Innovation Lead",
     profile: "Drives technical initiatives, contributes strategic ideas for organizational growth, and supports the club's operational framework.",
     focus: "Technology & Infrastructure",
     gradient: "from-amber-300/22 via-blue-300/16 to-slate-100/10",
@@ -32,7 +32,7 @@ export const team: TeamMember[] = [
   },
   {
     name: "Jonathan Stephan Walsh",
-    role: "Club Member",
+    role: "Coordinator",
     profile: "Shapes event identity, documentation, and the visual language of ThinkTech moments.",
     focus: "Club activities",
     gradient: "from-white/18 via-blue-400/24 to-cyan-300/12",
@@ -41,7 +41,7 @@ export const team: TeamMember[] = [
   },
   {
     name: "Mishika",
-    role: "Club Member",
+    role: "Coordinator",
     profile: "Shapes event identity, documentation, and the visual language of ThinkTech moments.",
     focus: "Club activities",
     gradient: "from-white/18 via-blue-400/24 to-cyan-300/12",
@@ -50,12 +50,39 @@ export const team: TeamMember[] = [
   },
   {
     name: "Rudra Vivek",
-    role: "Club Member",
+    role: "Coordinator",
     profile: "Shapes event identity, documentation, and the visual language of ThinkTech moments.",
     focus: "Club activities",
     gradient: "from-white/18 via-blue-400/24 to-cyan-300/12",
     image: "/profile/rudrav.jpeg",
     linkedin: "https://linkedin.com/in/rudra-vivek",
   },
-  
+  {
+    name: "Abhinav Sharma",
+    role: "Events & Operations Lead",
+    profile: "Responsible for smooth operations of the events and club activities.",
+    focus: "Events & Operations",
+    gradient: "from-white/18 via-blue-400/24 to-cyan-300/12",
+    image: "/profile/abhinav.jpg",
+    linkedin: "",
+  },
+  {
+    name: "Kavya Rautela",
+    role: "Design & Creative Lead",
+    profile: "Shapes event identity, documentation, and the visual language of ThinkTech moments.",
+    focus: "Design & Creativity",
+    gradient: "from-white/18 via-blue-400/24 to-cyan-300/12",
+    image: "/profile/kavya.jpg",
+    linkedin: "",
+  },
+  {
+    name: "Kshitij",
+    role: "Outreach & Membership Lead",
+    profile: "Responsible for smooth operations of the events and club activities.",
+    focus: "Outreach & Membership",
+    gradient: "from-white/18 via-blue-400/24 to-cyan-300/12",
+    image: "/profile/kshitij.jpg",
+    linkedin: "",
+  },
+
 ];
